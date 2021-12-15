@@ -1,0 +1,292 @@
+/* declaro variables de colores */
+:root {
+  --color-negro: #191a19;
+  --color-verde-oscuro: #1e5128;
+  --color-verde-claro: #4e9f3d;
+  --color-beige: #d8e9a8;
+}
+/* estilos */
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "VT323", monospace;
+}
+body {
+  position: fixed;
+  width: 100%;
+}
+.hero {
+  background-color: var(--color-negro);
+  color: #cecece;
+  display: block;
+  font-family: "VT323";
+  height: 100vh;
+  text-align: center;
+  position: relative;
+}
+/* contenido del menu mobile */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}
+.overlay-content ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+/* menu tablet/dekstop */
+nav {
+  display: none;
+  justify-content: space-between;
+}
+.logo img {
+  max-width: 100px;
+}
+ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+
+li {
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+a:hover {
+  color: #4e9f3d;
+  transition: all 0.5s ease-in-out;
+}
+a:not(:hover) {
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-button span {
+  padding: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.hero-text {
+  font-size: 2rem;
+  margin-top: 33vw;
+}
+.logo img {
+  max-width: 100px;
+}
+.menu-button {
+  text-align: end;
+}
+.socials {
+  display: flex;
+  margin: 50px;
+  justify-content: space-around;
+}
+.socials > button {
+  margin: 10px;
+  background: none;
+  border: none;
+}
+.socials > button:hover {
+  transform: scale(1.5, 0.5);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.socials > button:not(:hover) {
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+}
+
+#moving {
+  position: block;
+  top: 100%;
+  left: -1000%;
+  animation: "none";
+  overflow: auto;
+  text-align: center;
+  background-color: #191a19;
+  padding: 10px;
+  width: 100%;
+}
+.copiedToClipboardText {
+  white-space: normal;
+  width: 100%;
+}
+
+@keyframes message-scroll {
+  0% {
+    left: -100%; /* vendorless fallback */
+    -o-left: -100%; /* opera */
+    -ms-left: -100%; /* IE 10 */
+    -moz-left: -100%; /* Firefox */
+    -webkit-left: -100%; /*safari and chrome */
+    left: -100%;
+  }
+  20% {
+    left: 0%; /* vendorless fallback */
+    -o-left: 0%; /* opera */
+    -ms-left: 0%; /* IE 10 */
+    -moz-left: 0%; /* Firefox */
+    -webkit-left: 0%; /*safari and chrome */
+    left: 0%;
+  }
+  63% {
+    left: 0%; /* vendorless fallback */
+    -o-left: 0%; /* opera */
+    -ms-left: 0%; /* IE 10 */
+    -moz-left: 0%; /* Firefox */
+    -webkit-left: 0%; /*safari and chrome */
+    left: 0%;
+  }
+  75% {
+    left: -100%; /* vendorless fallback */
+    -o-left: -100%; /* opera */
+    -ms-left: -100%; /* IE 10 */
+    -moz-left: -100%; /* Firefox */
+    -webkit-left: -100%; /*safari and chrome */
+    left: -100%;
+  }
+  100% {
+    left: -200%; /* vendorless fallback */
+    -o-left: -200%; /* opera */
+    -ms-left: -200%; /* IE 10 */
+    -moz-left: -200%; /* Firefox */
+    -webkit-left: -200%; /*safari and chrome */
+    left: -200%;
+  }
+}
+.continue {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.continue button {
+  background: none;
+  border: none;
+  color: var(--color-beige);
+  font-size: 2rem;
+  text-align: center;
+  bottom: 10px;
+  position: fixed;
+  /* animacion de color del boton */
+  background: linear-gradient(
+    to right,
+    var(--color-verde-oscuro) 20%,
+    var(--color-verde-claro) 40%,
+    var(--color-beige) 60%,
+    var(--color-verde-claro) 80%,
+    var(--color-verde-oscuro) 100%
+  );
+  background-size: 200% auto;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+    -o-background-position: 200% center; /* opera */
+    -ms-background-position: 200% center; /* IE 10 */
+    -moz-background-position: 200% center; /* Firefox */
+    -webkit-background-position: 200% center; /*safari and chrome */
+  }
+}
+#moving {
+  position: fixed;
+  top: 75%;
+  left: -1000%;
+  animation: "none";
+  overflow: auto;
+  text-align: center;
+  background-color: #191a19;
+  opacity: 0.9;
+  padding: 10px;
+  width: 100%;
+}
+.copiedToClipboardText {
+  opacity: 1;
+  white-space: normal;
+  width: 100%;
+}
+
+/* media queries */
+@media (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+  }
+  .hero-text {
+    margin-top: 20vh;
+  }
+}

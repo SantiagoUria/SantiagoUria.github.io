@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "VT323", monospace;
+  scroll-behavior: smooth;
 }
 body {
   width: 100%;
@@ -24,6 +25,9 @@ body {
   height: 100vh;
   text-align: center;
   position: relative;
+}
+section {
+  overflow: hidden;
 }
 /* contenido del menu mobile */
 .overlay {
@@ -225,6 +229,7 @@ a:not(:hover) {
   display: flex;
   flex-flow: column;
   align-items: center;
+  margin: 10px;
 }
 .continue button {
   background: none;
@@ -288,14 +293,15 @@ a:not(:hover) {
   flex-direction: column;
   justify-content: center;
 }
-.about-me h3{
-}
 .information {
   padding: 25px;
 }
 .headshot img {
   max-width: 200px;
   border-radius: 50%;
+}
+.information > p {
+  font-size: 1.5rem;
 }
 .about-me > .continue > button {
   background: none;

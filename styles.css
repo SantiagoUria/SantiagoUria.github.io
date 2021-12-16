@@ -233,7 +233,7 @@ a:not(:hover) {
   font-size: 2rem;
   text-align: center;
   bottom: 10px;
-  position: fixed;
+  position: absolute;
   /* animacion de color del boton */
   background: linear-gradient(
     to right,
@@ -289,3 +289,4 @@ a:not(:hover) {
     margin-top: 20vh;
   }
 }
+

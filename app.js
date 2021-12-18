@@ -1,3 +1,18 @@
+// gets the device type
+const deviceType = () => {
+  const ua = navigator.userAgent;
+  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+    return "tablet";
+  } else if (
+    /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+      ua
+    )
+  ) {
+    return "mobile";
+  }
+  return "desktop";
+};
+
 // copies email on clipboard - only works on desktop version
 const copyToClipboardButton = document.getElementById("copyToClipboard");
 const message = document.getElementById("moving");
@@ -11,7 +26,26 @@ const copyToClipboard = () => {
   }, 0.002);
 };
 
-copyToClipboardButton.addEventListener("click", copyToClipboard, true);
+// copies the target text on the email button - only works on mobile version
+// source: https://clipboardjs.com/
+
+const clipboard = new ClipboardJS(".btn");
+const copyToClipboardMobile = () => {
+  clipboard.on("success", function (e) {
+    // console.info("Text:", e.text);
+    message.style.animation = "";
+
+    setTimeout(() => {
+      message.style.animation = "message-scroll 5s";
+    }, 0.002);
+    e.clearSelection();
+  });
+
+  clipboard.on("error", function (e) {
+    console.error("Action:", e.action);
+    console.error("Trigger:", e.trigger);
+  });
+};
 
 // buttonFalena = document.getElementById("buttonFalena");
 // infoFalena = document.getElementById("right");
@@ -42,28 +76,38 @@ burguerMenu.addEventListener("click", () => {
   closeNav();
 });
 
-// copies the target text on the email button - only works on mobile version
-// source: https://clipboardjs.com/
+copyToClipboardButton.addEventListener(
+  "click",
+  () => {
+    if (deviceType() === "mobile" || deviceType() === "tablet") {
+      copyToClipboardMobile();
+    }
+    if (deviceType() === "desktop") {
+      copyToClipboard();
+    }
+  },
+  true
+);
 
-const copyToClipboardMobile = () => {
-  const clipboard = new ClipboardJS(".btn");
 
-  clipboard.on("success", function (e) {
-    console.info("Action:", e.action);
-    console.info("Text:", e.text);
-    console.info("Trigger:", e.trigger);
-    message.style.animation = "";
 
-    setTimeout(() => {
-      message.style.animation = "message-scroll 5s";
-    }, 0.002);
-    e.clearSelection();
-  });
 
-  clipboard.on("error", function (e) {
-    console.error("Action:", e.action);
-    console.error("Trigger:", e.trigger);
-  });
-};
+//Get the button:
+toTopButton = document.getElementById("toTop");
 
-copyToClipboardButton.addEventListener("focus", copyToClipboardMobile, true);
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    toTopButton.style.display = "block";
+  } else {
+    toTopButton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}

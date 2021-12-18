@@ -4,6 +4,8 @@
   --color-verde-oscuro: #1e5128;
   --color-verde-claro: #4e9f3d;
   --color-beige: #d8e9a8;
+  --color-not-blanco: #cecece;
+  --color-quite-blanco: #fdfcfc;
 }
 /* estilos */
 html,
@@ -17,9 +19,13 @@ body {
 body {
   width: 100%;
 }
+hr {
+  width: 100%;
+  color: var(--color-quite-blanco);
+}
 .hero {
   background-color: var(--color-negro);
-  color: #cecece;
+  color: var(--color-not-blanco);
   display: block;
   font-family: "VT323";
   height: 100vh;
@@ -87,7 +93,6 @@ section {
   right: 45px;
   font-size: 60px;
 }
-
 @media screen and (max-height: 450px) {
   .overlay a {
     font-size: 20px;
@@ -157,15 +162,6 @@ a:not(:hover) {
   background: none;
   border: none;
 }
-.socials > button:hover {
-  transform: scale(1.5, 0.5);
-  transition: all 0.5s ease-in-out;
-  cursor: pointer;
-}
-.socials > button:not(:hover) {
-  transform: scale(1);
-  transition: all 0.5s ease-in-out;
-}
 
 #moving {
   position: block;
@@ -177,6 +173,7 @@ a:not(:hover) {
   background-color: #191a19;
   padding: 10px;
   width: 100%;
+  font-size: 1.1rem;
 }
 .copiedToClipboardText {
   white-space: normal;
@@ -326,15 +323,87 @@ a:not(:hover) {
   -webkit-text-fill-color: transparent;
   animation: shine 5s linear infinite;
 }
+.project-list {
+  min-height: 100vh;
+  background-color: var(--color-verde-oscuro);
+  color: var(--color-quite-blanco);
+
+  text-align: center;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.project-list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 0 auto;
+}
+.project-item {
+  background-color: var(--color-verde-claro);
+  border: 3px dotted var(--color-quite-blanco);
+  padding: 10px;
+  font-size: 1.2rem;
+}
+.project-item ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+}
+.project-item ul li {
+  list-style: none;
+}
+.project-item h3 {
+  font-size: 2rem;
+}
+.project-item p > span > a {
+  color: palegoldenrod;
+}
+.project-list > .continue button {
+  position: inherit;
+}
+
+#toTop {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 10px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: var(--color-negro); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 50%; /* Rounded corners */
+}
+#toTop i{
+  color: var(--color-quite-blanco);
+}
+/*
+#toTop:hover {
+  background-color: #555;} /* Add a dark-grey background on hover */
+
 /* media queries */
 @media (min-width: 768px) {
   .menu-button {
     display: none;
   }
-  .navbar {
+  .nav-bar {
     display: flex;
   }
   .hero-text {
     margin-top: 20vh;
+  }
+  .socials > button:hover {
+    transform: scale(1.5, 0.5);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  .socials > button:not(:hover) {
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
   }
 }

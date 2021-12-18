@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/8b70a16aa3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./font-mfizz/font-mfizz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
@@ -13,13 +14,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <link rel="stylesheet" href="./styles.css">
-    <script>
-        WebFont.load({
-            google: {
-                families: ['Droid Sans', 'Droid Serif']
-            }
-        });
-    </script>
     <title>Santiago Uría</title>
 </head>
 
@@ -35,11 +29,12 @@
             </ul>
         </div>
     </div>
+    <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
     <section class="hero">
         <div class="menu-button" onclick="openNav()">
             <span>MENU <i class="fa-solid fa-bars"></i></span>
         </div>
-        <nav class="navbar">
+        <nav class="nav-bar">
             <div class="logo"><img src="./logo.png" alt="Inicio"></div>
             <ul>
                 <li><a href="#aboutMe" target="_parent"> Sobre mi</a></li>
@@ -97,6 +92,45 @@
         </div>
     </section>
 
+    <section class="project-list proyectos" id="proyectos">
+        <hr>
+        <div class="project-item">
+            <h3>Falena</h3>
+            <p>E-commerce realizado en grupo a forma de proyecto final en el curso de Programación Web Fullstack de
+                Digital-House. <br> <span><a href="https://github.com/SantiagoUria/grupo_10_falena"
+                        target="_blank">repositorio</a></span></p>
+            <ul class="tecnologías">
+                <li><i class="icon-nodejs"></i>
+                </li>
+                <li><i class="icon-html5"></i>
+                </li>
+                <li><i class="icon-mysql"></i>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <hr>
+        <div class="project-item">
+            <h3>
+                Bubbly Words
+            </h3>
+            <p>Video Juego realizado en grupo para la aprobación de Introducción a la programación en la UNGS. <br>
+                <span><a href="https://github.com/SantiagoUria/Grupo_4_BubblyWords"
+                        target="_blank">repositorio</a></span>
+            </p>
+            <ul class="tecnologías">
+                <i class="icon-python"></i>
+
+            </ul>
+        </div>
+        <hr>
+
+        </div>
+    </section>
+
+    <footer>
+        ® Santiago Uría
+    </footer>
     <script src="./app.js"></script>
 
 </body>

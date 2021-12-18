@@ -416,4 +416,16 @@ footer{
     transform: scale(1);
     transition: all 0.5s ease-in-out;
   }
+  .continue{
+    display: none;
+  }
+  .about-me{
+    height: 50%;
+  }
+  .project-list{
+    min-height: auto;
+  }
+  .project-item ul{
+    justify-content: center;
+  }
 }

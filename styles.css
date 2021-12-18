@@ -360,7 +360,6 @@ a:not(:hover) {
 }
 .project-item p > span > a {
   color: palegoldenrod;
-  text-transform: none;
   font-size: 1.3rem;
   text-decoration: underline;
 }
@@ -403,15 +402,19 @@ footer{
   }
   .about-me{
     font-size: 3rem;
+    padding: 0 20% 0 20%
   }
   .about-me p{
     font-size: 2rem;
   }
-  .project-item, span{
+  .project-item{
     font-size: 2rem;
   }
   .project-item h3{
     font-size: 2.5rem;
+  }
+  .project-item p > span > a{
+        font-size: 2rem;
   }
   .tecnologías li i{
     font-size: 2rem;
